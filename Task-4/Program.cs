@@ -7,5 +7,27 @@
 
 
 
+Console.Clear();
+Console.Write("Введите первое число= ");
+int numA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число= ");
+int numB = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите третье число= ");
+int numС = Convert.ToInt32(Console.ReadLine());
 
+int max = numA;
 
+if(numA > numB)
+{ 
+   max = numA; 
+}
+else
+{
+    max = numB;
+}
+if(numС > max)
+ {
+    max = numС;
+ }
+  Console.Write($"Максимальное число из трёх= {max}");
+ 
