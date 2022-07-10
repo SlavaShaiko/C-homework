@@ -8,18 +8,24 @@ a = -9 b = -3 -> max = -3
 */
 
 Console.Clear();
-Console.WriteLine("Введите первое число= ");
+Console.Write("Введите первое число= ");
 int numA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число= ");
+Console.Write("Введите второе число= ");
 int numB = Convert.ToInt32(Console.ReadLine());
+
+int max = numA;
+int min = numB;
+
 if(numA > numB)
 {
- Console.WriteLine($"Наибльшее число = {numA}");   
+   max = numA;
+   min = numB;
+   Console.WriteLine($"Наибльшее число = {max}, наименьшее число = {min}");
 }
-else
-{
-    Console.WriteLine($"Наименьшее число из введенных {numA} и {numB} = {numB}");
-}
+    else
+    {
+        Console.WriteLine($"Наибльшее число = {min}, наименьшее число = {max}");
+    }
 
 
 
