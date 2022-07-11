@@ -4,9 +4,6 @@
 44 5 78 -> 78
 22 3 9 -> 22
 */
-
-
-
 Console.Clear();
 Console.Write("Введите первое число= ");
 int numA = Convert.ToInt32(Console.ReadLine());
@@ -29,5 +26,6 @@ if(numС > max)
  {
     max = numС;
  }
-  Console.Write($"Максимальное число из трёх= {max}");
+  Console.WriteLine($"Максимальное число из трёх= {max}  ");
+  
  

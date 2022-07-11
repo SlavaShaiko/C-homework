@@ -7,10 +7,15 @@
 7 -> нет
 */
 
-
-
-
-
-
-
-
+Console.Clear();
+Console.Write("Введите число для проверки = ");
+int numA = Convert.ToInt32(Console.ReadLine());
+int result = numA % 2; 
+if (result == 1)
+{
+    Console.WriteLine($"Введенное число {numA} = нечетное");
+}
+    else
+    {
+    Console.WriteLine($"Введенное число {numA} = четное");
+    }
