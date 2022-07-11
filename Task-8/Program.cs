@@ -10,10 +10,6 @@ Console.Clear();
 Console.Write("Введите число N= ");
 int N = Convert.ToInt32(Console.ReadLine());
 int index = 2;
-if(N < 0)
-{
-index = N % 2;
-}
 
 while(index <= N)
 {
