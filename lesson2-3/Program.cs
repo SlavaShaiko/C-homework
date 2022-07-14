@@ -55,8 +55,6 @@ else
     }
 }
 */
-
-
 Console.Clear();
 Console.Write("Введите цифру: ");
 int numA = Convert.ToInt32(Console.ReadLine());
@@ -68,7 +66,7 @@ int MetodDay(int week)
     {
         num = 1;
         Console.WriteLine($"{numA} -> нет");
-        return num1;
+        return num;
     }
     else
     {
@@ -148,6 +146,3 @@ int MetodDay(int week)
 
 
 int metodResul = MetodDay(numA);
-//Console.WriteLine($"{metodResul} ->  ");
-
-
