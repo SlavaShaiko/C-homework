@@ -63,12 +63,12 @@ int numA = Convert.ToInt32(Console.ReadLine());
 
 int MetodDay(int week)
 {
-    int num = 0;
+    
     if (week == 1)
     {
-        num = 1;
+        num = day1;
         Console.WriteLine($"{numA} -> нет");
-        return num;
+        return day1;
     }
     else
     {
