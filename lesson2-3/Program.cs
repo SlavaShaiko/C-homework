@@ -55,94 +55,25 @@ else
     }
 }
 */
+//if(week < 1 || week > 7) -> неверная цифра
+//else if (week > 0 && week < 6) -> нет
+//и т.д. Возвращать из метода можно ответ (да, нет, неверная цифра), а вне метода выводить результат в
 Console.Clear();
 Console.Write("Введите цифру: ");
 int numA = Convert.ToInt32(Console.ReadLine());
 
 int MetodDay(int week)
 {
-    int num = 0;
-    if (week == 1)
+    if (week < 1 || week > 7) 
     {
-        num = 1;
-        Console.WriteLine($"{numA} -> нет");
-        return num;
+        Console.WriteLine($"{week} -> неверная цифра");
     }
-    else
+    else if (week > 0 && week < 6) 
     {
-        if (week == 2)
-        {
-            num = 2;
-            Console.WriteLine($"{numA} -> нет");
-            return num;
-        }
-        else
-        {
-            if (week == 3)
-            {
-                num = 3;
-                Console.WriteLine($"{numA} -> нет");
-                return num;
-            }
-            else
-            {
-                if (week == 4)
-                {
-                    num = 4;
-                    Console.WriteLine($"{numA} -> нет");
-                    return num;
-                }
-                else
-                {
-                    if (week == 5)
-                    {
-                        num = 5;
-                        Console.WriteLine($"{numA} -> нет");
-                        return num;
-                    }
-                    else
-                    {
-                        if (week == 6)
-                        {
-                            num = 6;
-                            Console.WriteLine($"{numA} -> да");
-                            return num;
-                        }
-                        else
-                        {
-                            if (week == 7)
-                            {
-                                num = 7;
-                                Console.WriteLine($"{numA} -> да");
-                                return num;
-                            }
-                            else
-                            {
-                                if (week > 7)
-                                {
-                                    num = 8;
-                                    Console.WriteLine($"{numA} неверная цифра");
-                                    return num;
-                                }
-                                else
-                                {
-                                    if (week <= 0)
-                                    {
-                                        num = 9;
-                                        Console.WriteLine($"{numA} неверная цифра");
-                                        return num;
-                                    }
-                                }
-                            }
-                            Console.WriteLine($"{numA} да");
-                            return week;
-                        }
-                    }
-                }
-            }
-        }
+        Console.WriteLine($"{week} -> нет");
     }
+return week;
 }
-
-
 int metodResul = MetodDay(numA);
+
+Console.WriteLine($"{metodResul} -> да");

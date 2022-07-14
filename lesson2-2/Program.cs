@@ -26,8 +26,9 @@ int numA = Convert.ToInt32(Console.ReadLine());
 
 int MetodResul(int result)
 {
-    int resulA = numA % 10;
-    return resulA;
+    int resulA = numA / 10;
+    int resulB = resulA % 10;
+    return resulB;
 }
 int metodResul = MetodResul(numA);
 if (numA < 99)
