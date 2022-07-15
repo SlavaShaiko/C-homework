@@ -29,22 +29,33 @@ int MetodResul(int result)
     if (result < 0 || result < 99)
     {
         Console.WriteLine($"{result} -> третьей цифры нет");
+        return result;
     }
     else
     {
-        if (result > 99 || result < 999)
+        if (result < 999)
         {
-            int resulA = numA % 10;
+            int resulA = result % 10;
             Console.WriteLine($"{result} -> {resulA}");
-            return resulA;
         }
         else
         {
-            
+            if (result < 9999)
+            {
+                int resulA = result % 100 / 10;
+                Console.WriteLine($"{result} -> {resulA}");
+            }
+            else
+            {
+                if (result < 99999)
+                {
+                    int resulA = result % 1000 / 100;
+                    Console.WriteLine($"{result} -> {resulA}");
+                }
+            }
         }
     }
-
-    
+    return result;
 }
 int metodResul = MetodResul(numA);
 
