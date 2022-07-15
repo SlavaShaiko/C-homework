@@ -26,19 +26,28 @@ int numA = Convert.ToInt32(Console.ReadLine());
 
 int MetodResul(int result)
 {
-    int resulA = numA / 10;
-    int resulB = resulA % 10;
-    return resulB;
+    if (result < 0 || result < 99)
+    {
+        Console.WriteLine($"{result} -> третьей цифры нет");
+    }
+    else
+    {
+        if (result > 99 || result < 999)
+        {
+            int resulA = numA % 10;
+            Console.WriteLine($"{result} -> {resulA}");
+            return resulA;
+        }
+        else
+        {
+            
+        }
+    }
+
+    
 }
 int metodResul = MetodResul(numA);
-if (numA < 99)
-{
-    Console.WriteLine($"{numA} -> третьей цифры нет");
-}
-else
-{
-    Console.WriteLine($"{numA} -> {metodResul}");
-}
+
 
 /*
 Console.WriteLine("Задача 13 ");
