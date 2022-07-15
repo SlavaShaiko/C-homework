@@ -59,7 +59,6 @@ int MetodResul(int result)
 }
 int metodResul = MetodResul(numA);
 
-
 /*
 Console.WriteLine("Задача 13 ");
 
