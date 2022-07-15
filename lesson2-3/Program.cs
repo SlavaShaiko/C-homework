@@ -55,9 +55,11 @@ else
     }
 }
 */
+
 //if(week < 1 || week > 7) -> неверная цифра
 //else if (week > 0 && week < 6) -> нет
 //и т.д. Возвращать из метода можно ответ (да, нет, неверная цифра), а вне метода выводить результат в
+/*
 Console.Clear();
 Console.Write("Введите цифру: ");
 int numA = Convert.ToInt32(Console.ReadLine());
@@ -77,3 +79,26 @@ return week;
 int metodResul = MetodDay(numA);
 
 Console.WriteLine($"{metodResul} -> да");
+*/
+
+Console.Write("Введи цифру, обозначающую день недели: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+void CheckingTheDayOfTheWeek(int dayNumber)
+{
+    if (dayNumber == 6 || dayNumber == 7)
+    {
+        Console.WriteLine("(этот день выходной) -> да");
+    }
+    else
+    if (dayNumber < 1 || dayNumber > 7)
+    {
+        Console.WriteLine("это вообще не день недели");
+    }
+    else
+    {
+        Console.WriteLine("(этот день не выходной) -> нет");
+    }
+}
+
+CheckingTheDayOfTheWeek(dayNumber);
