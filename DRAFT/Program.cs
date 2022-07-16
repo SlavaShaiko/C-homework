@@ -102,7 +102,6 @@ double GetDistance(int ax, int ay, int bx, int by)
 квадратов чисел от 1 до N.
 5 -> 1, 4, 9, 16, 25.
 2 -> 1,4
-*/
 Console.Write("Введите число:");
 int n = Convert.ToInt32(Console.ReadLine());
 WriteSquareTable(n);
@@ -115,10 +114,14 @@ void WriteSquareTable(int n)
         i++;
     }
 }
+*/
 
 
+short x = 150;
 
+byte y = (byte)(x + x);
 
+Console.WriteLine(y);
 
 
 
