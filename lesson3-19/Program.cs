@@ -6,22 +6,47 @@
 23432 -> да
 */
 
+/*
 Console.Clear();
 Console.Write("введите пятизначное число: ");
 int palindrome = Convert.ToInt32(Console.ReadLine());
+int check = palindrome;
+int variable = 0;
+int currentVariable = 0;
+while (check > 0)
+{
+    variable = check % 10;
+    currentVariable = currentVariable * 10 + variable;
+    check = check / 10;
+}
+if (palindrome == currentVariable)
+{
+    Console.WriteLine($"{palindrome} -> Да");
+}
+else
+{
+    Console.WriteLine($"{palindrome} -> Нет");
+}
+*/
+
+Console.Clear();
+Console.Write("введите пятизначное число: ");
+int palindrome = Convert.ToInt32(Console.ReadLine());// Решение с помощью метода
+
 void Palindromecheck(int check)
 {
-    int leftPartPalindrome = check / 10000;
-    int rightPartPalindrome = check % 10;
-    int leftTenthPartPalindrome = check / 1000 % 10;
-    int rightTenthPartPalindrome = check % 100 / 10;
-    if (leftPartPalindrome == rightPartPalindrome || leftTenthPartPalindrome == rightTenthPartPalindrome)
+    int variable = 0;                // Решение с помощью метода
+    int currentVariable = 0;
+    while (check > 0)
     {
-        Console.WriteLine($"{palindrome} -> да");
+        variable = check % 10;
+        currentVariable = currentVariable * 10 + variable;
+        check = check / 10;
     }
+    if (palindrome == currentVariable)
+        Console.WriteLine($"{palindrome} -> Да");
     else
-    {
-        Console.WriteLine($"{palindrome} -> нет");
-    }
+        Console.WriteLine($"{palindrome} -> Нет");
+
 }
 Palindromecheck(palindrome);
