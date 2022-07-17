@@ -146,7 +146,7 @@ else
     Console.WriteLine($"{palindrome} -> Нет");
 }
 */
-
+/*
 Console.Clear();
 Console.Write("введите пятизначное число: ");
 int palindrome = Convert.ToInt32(Console.ReadLine());
@@ -168,3 +168,155 @@ void Palindromecheck(int check)
 
 }
 Palindromecheck(palindrome);
+*/
+
+//Виды методов(функций)
+
+//Метод1
+/*void Metod()                             //ничего не возвращает и ничего не принемает!!!
+{
+    Console.WriteLine("любой текст");
+}
+//Metod();            //вызов метода
+*/
+
+//Метод2
+/*
+void Metod(string msg, int count)          //ничего не возвращает но принемает!!!
+{
+    int i = 0;
+    while (i < count)
+    {
+        Console.WriteLine(msg);
+        i++;
+    }
+}
+Metod(msg: "любой текст", count: 4); //можно указывать и следующим методом
+Metod("любой текст", 4);            //вызов метода
+*/
+/*
+//Метод3 
+int Metod()                               //что-то возврашает но ничего не принемают!!!
+{
+    return DateTime.Now.Year;
+}
+int year=Metod();
+Console.WriteLine(year);
+*/
+
+//Метод4 
+/*
+Console.Clear();
+string Metod(int count, string text)            //что-то принемает и что-то возвращает!!! 
+{
+    int i = 0;
+    string result = String.Empty;               //String.Empty означает пустую строку
+    while (i < count)
+    {
+        result = result + text;
+        i++;
+    }
+    return result;    // возврта результата
+}
+string metod = Metod(5, "любой текст ");
+Console.WriteLine(metod);
+Console.WriteLine("");
+*/
+
+//For
+/*
+Console.Clear();
+string Metod(int count, string text)            //что-то принемает и что-то возвращает!!! 
+{
+    string result = String.Empty;               //String.Empty означает пустую строку
+    for (int i = 0; i < count; i++) //for (1 инициализация счётчика, 2 условия счётчика,3 увеличение счетчика)
+    {
+        result = result + text;
+    }
+    return result;    // возврта результата
+}
+string metod = Metod(5, "любой текст ");
+Console.WriteLine(metod);
+Console.WriteLine("");
+*/
+
+//for->for
+/*
+Console.Clear();                  //таблица умножения
+for (int i = 2; i <= 10; i++) //for (1 инициализация счётчика, 2 условия счётчика,3 увеличение счетчика)
+{
+    for (int j = 2; j <= 10; j++)
+    {
+        Console.WriteLine($"{i}x{j}={i * j}"); //интерполяция строк
+    }
+    Console.WriteLine();
+}
+*/
+
+/*Дан текст. В тексте нужно все пробелы заменить черточками, 
+маленькие буквы “к” заменить большими “К”, а большие “С” заменить 
+маленькими “с”.
+Ясна ли задача?*/
+/*
+Console.Clear();
+string text = "Дан текст. В тексте нужно все пробелы заменить черточками,"
+            + "маленькие буквы “к” заменить большими “К”, а большие “С” заменить"
+            + "маленькими “с”."
+            + "Ясна ли задача?*;
+//string text = "Дан текст. В тексте нужно все пробелы заменить черточками,";
+//               0123456789
+//text[2] //н
+string Replace(string text, char oldValue, char newValue)//метод
+{
+    string result = String.Empty;    //определяем пустую строку
+
+    int length = text.Length;   //определяем и присваиваем длину строки
+    for (int i = 0; i < length; i++)
+
+    {
+        if (text[i] == oldValue) result = result + $"{newValue}";
+        else result = result + $"{text[i]}";
+    }
+    return result;
+}
+string newText = Replace(text, ' ', '|');
+Console.WriteLine(newText);
+Console.WriteLine();
+
+newText = Replace(newText, 'к', 'К');
+Console.WriteLine(newText);
+Console.WriteLine();
+
+newText = Replace(newText, 'С', 'с');
+Console.WriteLine(newText);
+*/
+
+
+
+
+
+/*1. Найти позицию минимального элемента
+в неотсортированной части массива
+2. Произвести обмен этого значения со 
+значением первой неотсортированной позиции
+3. Повторять пока есть не отсортированные 
+элементы
+*/
+int[] array = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+Console.WriteLine();
+}
+
+
+
+
+
+
+
+
