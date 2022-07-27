@@ -295,26 +295,154 @@ Console.WriteLine(newText);
 //Ctrl +K+C для закомментирования кода
 //Ctrl +K+U и для раcкомментирования кода
 
-
-/*1. Найти позицию минимального элемента
+/*
+1.Найти позицию минимального элемента
 в неотсортированной части массива
 2. Произвести обмен этого значения со 
 значением первой неотсортированной позиции
 3. Повторять пока есть не отсортированные 
 элементы
-*/
-int[] array = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+int[] arr = { 9, 5, 4, 3, 2, 6, 7, 1, 1 };
 void PrintArray(int[] array)
 {
     int count = array.Length;
+
     for (int i = 0; i < count; i++)
     {
-        Console.Write($"{array[i]} ");
+        Console.Write($"{array[i]}");
     }
-Console.WriteLine();
+    Console.WriteLine();
+}
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition])
+                minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+
+PrintArray(arr);
+SelectionSort(arr);
+PrintArray(arr);
+*/
+
+// 1.Найти позицию максимального элемента
+// в неотсортированной части массива
+// 2. Произвести обмен этого значения со 
+// значением первой неотсортированной позиции
+// 3. Повторять пока есть не отсортированные 
+// элементы
+Console.Clear();
+int[] arr = { 1, 4, 7, 9, 2, 4, 5, 6, 4, 1, 1, 2, 3 };
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i],3}");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort1(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition])
+                minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        int maxPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] > array[maxPosition])
+                maxPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
+    }
 }
 
 
+PrintArray(arr);
+SelectionSort1(arr);
+PrintArray(arr);
+SelectionSort(arr);
+PrintArray(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// using System;
+
+// public class MainClass
+// {
+//     public static void Main()
+//     {
+//         Console.WriteLine("Введите два числа через пробел: длина и ширина стола");
+//         string line = Console.ReadLine();
+//         string[] splitString = line.Split(' ');
+
+//         double length = Convert.ToDouble(splitString[0]); // длина
+//         double width = Convert.ToDouble(splitString[1]); // ширина
+
+//         //Тут будет Ваш код
+
+//         Console.WriteLine($"Площадь стола: {(length-0.2) * (width-0.2)}"); 
+//     }
+// }
 
 
 
