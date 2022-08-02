@@ -340,6 +340,7 @@ PrintArray(arr);
 // значением первой неотсортированной позиции
 // 3. Повторять пока есть не отсортированные 
 // элементы
+/*
 Console.Clear();
 int[] arr = { 1, 4, 7, 9, 2, 4, 5, 6, 4, 1, 1, 2, 3 };
 void PrintArray(int[] array)
@@ -391,39 +392,7 @@ SelectionSort1(arr);
 PrintArray(arr);
 SelectionSort(arr);
 PrintArray(arr);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 // using System;
 
