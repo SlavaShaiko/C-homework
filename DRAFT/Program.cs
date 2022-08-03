@@ -1,8 +1,8 @@
 ﻿// using System;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 // namespace MyConsole
-=======
+//=======
 /*
 17. Напишите программу, которая принимает на вход
 координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт
@@ -370,7 +370,8 @@ PrintArray(arr);
 // using System;
 
 // public class MainClass
->>>>>>> 563f6a375e4fb9527d1e9b0527eafe12f56a8ce1
+
+//>>>>>>> 563f6a375e4fb9527d1e9b0527eafe12f56a8ce1
 // {
 //     class Program
 //     {
