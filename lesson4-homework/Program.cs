@@ -86,5 +86,53 @@ Console.Write($"Сумма цифр в числе {num} -> {sumOfDigits} ");
 Задача 29: Напишите программу, которая задаёт массив из 8 элементов, заполненный
 псевдослучайными числами и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-, 1, 33 -> [6, 1, 33]
+6, 1, 33 -> [6, 1, 33]
 */
+
+Console.Clear();
+int[] array = new int[8];
+int firstPartArray = 5;
+int secondPartArray = 5;
+PrintArray(array, secondPartArray, firstPartArray);
+void PrintArray(int[] arr, int secondPartArr, int firstPartArr)
+{
+    Random ranArray = new Random();
+    int count = array.Length;
+    Console.Write("Исходный массив: ");
+    for (int i = 0; i < count; i++)
+    {
+        arr[i] = ranArray.Next(0, 100);
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.WriteLine();
+    Console.WriteLine();
+    for (int i = 0; i < firstPartArr; i++)
+    {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 4) Console.Write(", ");
+    }
+    Console.Write(" -> [");
+    for (int i = 0; i < firstPartArr; i++)
+    {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 4) Console.Write(", ");
+    }
+    Console.WriteLine("]");
+    for (int i = secondPartArr; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.Write(" -> [");
+    for (int i = secondPartArr; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.Write("]");
+}
+
+
+
+
