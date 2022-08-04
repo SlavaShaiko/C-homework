@@ -40,5 +40,3 @@ else
     Console.WriteLine($"{numA} -> {resulA}");
 }
 */
-
-/

@@ -509,7 +509,7 @@ namespace ConsoleApplication52
 //     }
 // }
 
-ПЕРЕВОРОТ ЧИСЛА
+//ПЕРЕВОРОТ ЧИСЛА
 Console.Clear();
 Console.Write("Введите число: ");
 int numA = Convert.ToInt32(Console.ReadLine());
