@@ -468,34 +468,43 @@ namespace ConsoleApplication52
         }
     }
 }*/
-using System;
+// using System;
 
-public class MainClass
+// public class MainClass
+// {
+//     public static void Main()
+//     {
+//         int a = Convert.ToInt32(Console.ReadLine());
+//         int b = Convert.ToInt32(Console.ReadLine());
+//         int c = Convert.ToInt32(Console.ReadLine());
+//         int d = Convert.ToInt32(Console.ReadLine());
+
+//         int minValue = 0;    
+//         int maxValue = a;   
+
+//         if ((a <= b) && (a <= c) && (a <= d)) minValue = a;
+//         if ((b <= a) && (b <= c) && (b <= d)) minValue = b;
+//         if ((c <= a) && (c <= b) && (c <= d)) minValue = c;
+//         if ((d <= a) && (d <= b) && (d <= c)) minValue = d;
+
+//         if ((a >= b) && (a >= c) && (a >= d)) maxValue = a;
+//         if ((b >= a) && (b >= c) && (b >= d)) maxValue = b;
+//         if ((c >= a) && (c >= b) && (c >= d)) maxValue = c;
+//         if ((d >= a) && (d >= b) && (d >= c)) maxValue = d;
+//         Console.WriteLine($"{minValue}  {maxValue}");
+
+//     }
+// }
+
+int[] array = new int[5];
+Array(array);
+void Array(int[] arr)
 {
-    public static void Main()
+    Random rand = new Random();
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
     {
-        int a = Convert.ToInt32(Console.ReadLine());
-        int b = Convert.ToInt32(Console.ReadLine());
-        int c = Convert.ToInt32(Console.ReadLine());
-        int d = Convert.ToInt32(Console.ReadLine());
-
-        int minValue = 0;    
-        int maxValue = a;   
-
-        if ((a <= b) && (a <= c) && (a <= d)) minValue = a;
-        if ((b <= a) && (b <= c) && (b <= d)) minValue = b;
-        if ((c <= a) && (c <= b) && (c <= d)) minValue = c;
-        if ((d <= a) && (d <= b) && (d <= c)) minValue = d;
-
-        if ((a >= b) && (a >= c) && (a >= d)) maxValue = a;
-        if ((b >= a) && (b >= c) && (b >= d)) maxValue = b;
-        if ((c >= a) && (c >= b) && (c >= d)) maxValue = c;
-        if ((d >= a) && (d >= b) && (d >= c)) maxValue = d;
-
-         
-
-        
-        Console.WriteLine($"{minValue}  {maxValue}");
-
+        arr[i] = rand.Next(0, 2);
+        Console.Write($"{arr[i]}, ");
     }
 }
