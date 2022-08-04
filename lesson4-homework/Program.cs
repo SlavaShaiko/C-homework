@@ -88,7 +88,7 @@ Console.Write($"Сумма цифр в числе {num} -> {sumOfDigits} ");
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33]
 */
-
+/*
 Console.Clear();
 int[] array = new int[8];
 int firstPartArray = 5;
@@ -132,7 +132,28 @@ void PrintArray(int[] arr, int secondPartArr, int firstPartArr)
     }
     Console.Write("]");
 }
+*/
 
+Console.Clear();
+int[] array = new int[8];
 
-
+PrintArray(array);
+void PrintArray(int[] arr)
+{
+    Random ranArray = new Random();
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        arr[i] = ranArray.Next(0, 100);
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.Write(" -> [");
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.Write("]");
+}
 
