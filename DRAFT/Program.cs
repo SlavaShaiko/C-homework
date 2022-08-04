@@ -496,15 +496,36 @@ namespace ConsoleApplication52
 //     }
 // }
 
-int[] array = new int[5];
-Array(array);
-void Array(int[] arr)
+// int[] array = new int[5];
+// Array(array);
+// void Array(int[] arr)
+// {
+//     Random rand = new Random();
+//     int count = array.Length;
+//     for (int i = 0; i < count; i++)
+//     {
+//         arr[i] = rand.Next(0, 2);
+//         Console.Write($"{arr[i]}, ");
+//     }
+// }
+
+ПЕРЕВОРОТ ЧИСЛА
+Console.Clear();
+Console.Write("Введите число: ");
+int numA = Convert.ToInt32(Console.ReadLine());
+
+int MetodResul(int result)
 {
-    Random rand = new Random();
-    int count = array.Length;
-    for (int i = 0; i < count; i++)
+    int count = numA;
+    for (int i = count; i > 0; i = i / 10)
     {
-        arr[i] = rand.Next(0, 2);
-        Console.Write($"{arr[i]}, ");
+        int ind = i % 10;
+        Console.Write(ind);
     }
+    if (result < 0 || result < 99)
+    {
+        Console.WriteLine($"{result} -> третьей цифры нет");
+    }
+    return result;
 }
+int metodResul = MetodResul(numA);
