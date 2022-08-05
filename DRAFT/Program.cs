@@ -510,22 +510,23 @@ namespace ConsoleApplication52
 // }
 
 //ПЕРЕВОРОТ ЧИСЛА
-Console.Clear();
-Console.Write("Введите число: ");
-int numA = Convert.ToInt32(Console.ReadLine());
 
-int MetodResul(int result)
-{
-    int count = numA;
-    for (int i = count; i > 0; i = i / 10)
-    {
-        int ind = i % 10;
-        Console.Write(ind);
-    }
-    if (result < 0 || result < 99)
-    {
-        Console.WriteLine($"{result} -> третьей цифры нет");
-    }
-    return result;
-}
-int metodResul = MetodResul(numA);
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int numA = Convert.ToInt32(Console.ReadLine());
+
+// int MetodResul(int result)
+// {
+//     int count = numA;
+//     for (int i = count; i > 0; i = i / 10)
+//     {
+//         int ind = i % 10;
+//         Console.Write(ind);
+//     }
+//     if (result < 0 || result < 99)
+//     {
+//         Console.WriteLine($"{result} -> третьей цифры нет");
+//     }
+//     return result;
+// }
+// int metodResul = MetodResul(numA);
