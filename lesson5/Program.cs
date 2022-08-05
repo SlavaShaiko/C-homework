@@ -1,4 +1,4 @@
-﻿int[] CreateArrayRndInt(int 
+﻿
 int[] GetSumPosNegElem(int[] array)
 {
     int sumNeg = 0;
