@@ -51,7 +51,7 @@ Console.WriteLine($"сумма положительных чисел равна 
 // массива: положительные элементы замените на
 // соответствующие отрицательные, и наоборот.
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
-Console.Clear();
+/*Console.Clear();
 int[] GreateArrayRndDig(int size, int min, int max)
 {
     int[] arr = new int[size];
@@ -83,6 +83,166 @@ PrintArray(greateArrayRndDig);
 ArrayDig(greateArrayRndDig);
 Console.Write(" -> ");
 PrintArray(greateArrayRndDig);
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+/*Андрей Булгаков: Задача 33: Задайте массив. Напишите программу, которая
+определяет, присутствует ли заданное число в массиве.
+4; массив [6, 7, 19, 345, 3] -> нет
+3; массив [6, 7, 19, 345, 3] -> да
+*/
+/*
+Console.Clear();
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+int[] ArrayRnd(int size, int min, int max)
+{
+    int[] arr = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rnd.Next(min, max + 1);
+    }
+    return arr;
+}
+
+void DefiningGivenNumber(int[] array, int dig)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == dig)
+        {
+            Console.Write("-> да");
+            return;
+        }
+    }
+    Console.WriteLine($"-> нет");
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == 0) Console.Write("[");
+        if (i < array.Length - 1) Console.Write(array[i] + ",");
+        else Console.Write(array[i] + "]");
+    }
+}
+Console.Write($"{number}; массив ");
+int[] arrayRnd = ArrayRnd(12, 0, 33);
+PrintArray(arrayRnd);
+DefiningGivenNumber(arrayRnd, number);
+Console.WriteLine();
+*/
+//------------------------------------------------------------------------------------------------------------------------------------
+/*Задача 35: Задайте одномерный массив из 123 случайных чисел.
+Найдите количество элементов массива, значения которых лежат в
+отрезке [10,99].
+Пример для массива из 5, а не 123 элементов. В своём решении сделайте для
+123
+[5, 18, 123, 6, 2] -> 1
+[1, 2, 3, 6, 2] -> 0
+[10, 11, 12, 13, 14] -> 5
+*/
+/*
+Console.Clear();
+int[] ArrayRnd(int size, int min, int max)
+{
+    int[] arr = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rnd.Next(min, max + 1);
+    }
+    return arr;
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == 0) Console.Write("[");
+        if (i < array.Length - 1) Console.Write(array[i] + ", ");
+        else Console.Write(array[i] + "]");
+    }
+}
+
+int[] SumPosNegDig(int[] arr)
+{
+    int count = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 10 && arr[i] < 100)
+            count += 1;
+        else
+            count += 0;
+    }
+    return new int[] { count };
+}
+
+int[] arrayRnd = ArrayRnd(123, 0, 124);
+PrintArray(arrayRnd);
+int[] sumPosNegDig = SumPosNegDig(arrayRnd);
+Console.WriteLine($" -> {sumPosNegDig[0]}");
+*/
+//------------------------------------------------------------------------------------------------------------------------------------------------
+/* Задача 37: Найдите произведение пар чисел в одномерном массиве.
+Парой считаем первый и последний элемент, второй и предпоследний
+и т.д. Результат запишите в новом массиве.
+[1 2 3 4 5] -> 5 8 3
+[6 7 3 6] -> 36 21
+*/
+Console.Clear();
+int[] ArrayRnd(int size, int min, int max)
+{
+    int[] arr = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rnd.Next(min, max + 1);
+    }
+    return arr;
+}
+void PrintArray(int[] array)
+
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == 0) Console.Write("[");
+        if (i < array.Length - 1) Console.Write(array[i] + ", ");
+        else Console.Write(array[i] + "]");
+    }
+}
+
+int[] ProductPairsNumbers(int[] array)
+{
+    if (array.Length % 2 == 0)
+    {
+        int[] newArray = new int[array.Length / 2];
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            newArray[i] = array[i] * array[array.Length - 1 - i];
+        }
+        return newArray;
+    }
+    else
+    {
+        int[] newArray = new int[array.Length / 2 + 1];
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            newArray[i] = array[i] * array[array.Length - 1 - i];
+        }
+        newArray[newArray.Length - 1] = array[array.Length / 2];
+        return newArray;
+    }
+}
+int[] arrayRnd = ArrayRnd(9, 1, 8);
+PrintArray(arrayRnd);
+int[] productPairsNumbers = ProductPairsNumbers(arrayRnd);
+Console.Write(" -> ");
+PrintArray(productPairsNumbers);
+Console.WriteLine();
 
 
 
@@ -97,20 +257,3 @@ PrintArray(greateArrayRndDig);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Задача 32: Напишите программу замена элементов
-// массива: положительные элементы замените на
-// соответствующие отрицательные, и наоборот.
-// [-4, -8, 8, 2] -> [4, 8, -8, -2]
