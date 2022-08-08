@@ -654,33 +654,33 @@ namespace ConsoleApplication52
 // int[] arrayRealNumber = ArrayRealNumber(greateArrayRndDig);
 // Console.WriteLine($" -> {arrayRealNumber[0]}");
 
-Console.Write("Количество рандомных чисел: ");
-int val = 5;
-int[] arr = new int[val];
-int max = 0;
-int min = 0;
+// Console.Write("Количество рандомных чисел: ");
+// int val = 5;
+// int[] arr = new int[val];
+// int max = 0;
+// int min = 0;
  
-Console.WriteLine(); // Табуляция
+// Console.WriteLine(); // Табуляция
  
-for (int i = 0; i < val; i++)
-{
-      Console.Write("Число {0}: ", i + 1);
-      arr[i] = Convert.ToInt32(Console.ReadLine());
-}
+// for (int i = 0; i < val; i++)
+// {
+//       Console.Write("Число {0}: ", i + 1);
+//       arr[i] = Convert.ToInt32(Console.ReadLine());
+// }
  
- //Минимальный и максимальный возраст
-min = arr[0];
-max = arr[0];
-for (int i = 1; i < val; i++)
-{
-       if (arr[i] < min)
-            min = arr[i];
-       if (arr[i] > max)
-            max = arr[i];
-}
+//  //Минимальный и максимальный возраст
+// min = arr[0];
+// max = arr[0];
+// for (int i = 1; i < val; i++)
+// {
+//        if (arr[i] < min)
+//             min = arr[i];
+//        if (arr[i] > max)
+//             max = arr[i];
+// }
  
-Console.WriteLine(); // Табуляция
-Console.WriteLine("Max: " + max);
-Console.WriteLine("Min: " + min);
+// Console.WriteLine(); // Табуляция
+// Console.WriteLine("Max: " + max);
+// Console.WriteLine("Min: " + min);
  
-Console.ReadLine();
+// Console.ReadLine();
