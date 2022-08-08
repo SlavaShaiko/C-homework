@@ -24,15 +24,30 @@ void PrintArray(int[] array)
     }
 }
 
+// int[] ArrayRealNumber(int[] array)
+// {
+//     int maxReal = array.Max();
+//     int minReal = array.Min();
+//     int differenceOfElements = maxReal - minReal;
+//     return new int[] { differenceOfElements };
+// }
+
 int[] ArrayRealNumber(int[] array)
 {
-    int maxReal = array.Max();
-    int minReal = array.Min();
-    int differenceOfElements = maxReal - minReal;
-    return new int[] { differenceOfElements };
+    int minReal = array[0];
+    int maxReal = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] < minReal) minReal = array[i];
+        else
+        {
+            if (array[i] > maxReal) maxReal = array[i];
+        }
+    }
+    return new int[] { maxReal - minReal };
 }
 
-int[] greateArrayRndDig = GreateArrayRndDig(10, -99, 99);
+int[] greateArrayRndDig = GreateArrayRndDig(6, 1, 12);
 PrintArray(greateArrayRndDig);
 int[] arrayRealNumber = ArrayRealNumber(greateArrayRndDig);
 Console.WriteLine($" -> {arrayRealNumber[0]}");

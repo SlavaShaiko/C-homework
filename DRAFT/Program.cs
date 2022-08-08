@@ -572,49 +572,115 @@ namespace ConsoleApplication52
 //         }
 //     }
 // }
-using System;
+// using System;
 
-public class MainClass
+// public class MainClass
+// {
+//     public static void Main()
+//     {
+//         string letter = Convert.ToString(Console.ReadLine());
+
+//         switch (letter)
+//         {
+//             case "а":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "о":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "э":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "е":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "и":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "ы":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "у":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "ё":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "ю":
+//                 Console.WriteLine("гласная");
+//                 break;
+//             case "я":
+//                 Console.WriteLine("гласная");
+//                 break;
+
+//             default:
+//                 break;
+//         }
+//     }
+// }
+
+// Console.Clear();
+// int[] GreateArrayRndDig(int size, int min, int max)
+// {
+//     int[] arr = new int[size];
+//     Random rnd = new Random();
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = rnd.Next(min, max + 1);
+//     }
+//     return arr;
+// }
+
+// void PrintArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i == 0) Console.Write("[");
+//         if (i < array.Length - 1) Console.Write(array[i] + ", ");
+//         else Console.Write(array[i] + "]");
+//     }
+// }
+
+// int[] ArrayRealNumber(int[] array)
+// {
+//     int maxReal = array.Max();
+//     int minReal = array.Min();
+//     int differenceOfElements = maxReal - minReal;
+//     return new int[] { differenceOfElements };
+// }
+
+// int[] greateArrayRndDig = GreateArrayRndDig(10, -99, 99);
+// PrintArray(greateArrayRndDig);
+// int[] arrayRealNumber = ArrayRealNumber(greateArrayRndDig);
+// Console.WriteLine($" -> {arrayRealNumber[0]}");
+
+Console.Write("Количество рандомных чисел: ");
+int val = 5;
+int[] arr = new int[val];
+int max = 0;
+int min = 0;
+ 
+Console.WriteLine(); // Табуляция
+ 
+for (int i = 0; i < val; i++)
 {
-    public static void Main()
-    {
-        string letter = Convert.ToString(Console.ReadLine());
-
-        switch (letter)
-        {
-            case "а":
-                Console.WriteLine("гласная");
-                break;
-            case "о":
-                Console.WriteLine("гласная");
-                break;
-            case "э":
-                Console.WriteLine("гласная");
-                break;
-            case "е":
-                Console.WriteLine("гласная");
-                break;
-            case "и":
-                Console.WriteLine("гласная");
-                break;
-            case "ы":
-                Console.WriteLine("гласная");
-                break;
-            case "у":
-                Console.WriteLine("гласная");
-                break;
-            case "ё":
-                Console.WriteLine("гласная");
-                break;
-            case "ю":
-                Console.WriteLine("гласная");
-                break;
-            case "я":
-                Console.WriteLine("гласная");
-                break;
-
-            default:
-                break;
-        }
-    }
+      Console.Write("Число {0}: ", i + 1);
+      arr[i] = Convert.ToInt32(Console.ReadLine());
 }
+ 
+ //Минимальный и максимальный возраст
+min = arr[0];
+max = arr[0];
+for (int i = 1; i < val; i++)
+{
+       if (arr[i] < min)
+            min = arr[i];
+       if (arr[i] > max)
+            max = arr[i];
+}
+ 
+Console.WriteLine(); // Табуляция
+Console.WriteLine("Max: " + max);
+Console.WriteLine("Min: " + min);
+ 
+Console.ReadLine();

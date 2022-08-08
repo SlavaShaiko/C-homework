@@ -48,8 +48,6 @@ int[] ProductPairsNumbers(int[] array)
         newArray[newArray.Length - 1] = array[array.Length / 2];
         return newArray;
     }
-
-
 }
 int[] arrayRnd = ArrayRnd(5, 1, 6);
 PrintArray(arrayRnd);
