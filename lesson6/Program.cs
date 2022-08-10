@@ -232,16 +232,16 @@ int[] CopyArray(int[] array)
     {
         copyArr[i] = array[i];
     }
-    copyArr[0] = 1;
+    copyArr[0] = 1;// проверка массива
     return copyArr;
 }
 
 int[] arrayRnd = ArrayRnd(9, 1, 8);
 int[] copyArray = CopyArray(arrayRnd);
-Console.Write("Основной массив -> ");
+Console.Write("Основной массив                               -> ");
 PrintArray(arrayRnd);
 Console.WriteLine();
-Console.Write("Скопированый массив ");
+Console.Write("Скопированый массив с измененным [0] индексом -> ");
 CopyArray(arrayRnd);
 PrintArray(copyArray);
 Console.WriteLine();
