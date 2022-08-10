@@ -4,16 +4,16 @@
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 Console.Clear();
-double b1 = NumberInpun();
-double b2 = NumberInpun();
-double k1 = NumberInpun();
-double k2 = NumberInpun();
+Console.Write("Введите b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
 
-double NumberInpun();
-{
-    Console.Write("Введите число: ");
-    return Convert.ToInt32(Console.ReadLine());
-}
+
 
 
 

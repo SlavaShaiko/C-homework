@@ -28,16 +28,16 @@ void PrintNumber(int[] arra)
     }
 }
 PrintNumber(enteringNumbe);
-int[] NumberOfNumbers(int[] array)
+int NumberOfNumbers(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > 0) count++;
     }
-    return new int[] { count };
+    return  count ;
 }
-int[] numberOfNumbers = NumberOfNumbers(enteringNumbe);
-Console.Write($"{numberOfNumbers[0]}");
+int numberOfNumbers = NumberOfNumbers(enteringNumbe);
+Console.Write($"{numberOfNumbers}");
 
 
