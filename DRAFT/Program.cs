@@ -659,15 +659,15 @@ namespace ConsoleApplication52
 // int[] arr = new int[val];
 // int max = 0;
 // int min = 0;
- 
+
 // Console.WriteLine(); // Табуляция
- 
+
 // for (int i = 0; i < val; i++)
 // {
 //       Console.Write("Число {0}: ", i + 1);
 //       arr[i] = Convert.ToInt32(Console.ReadLine());
 // }
- 
+
 //  //Минимальный и максимальный возраст
 // min = arr[0];
 // max = arr[0];
@@ -678,9 +678,30 @@ namespace ConsoleApplication52
 //        if (arr[i] > max)
 //             max = arr[i];
 // }
- 
-// Console.WriteLine(); // Табуляция
+
+// Console.WriteLine(); // Табуляция                                                                                  
 // Console.WriteLine("Max: " + max);
 // Console.WriteLine("Min: " + min);
- 
+
 // Console.ReadLine();
+                                          //Таблица умножния
+
+Console.Clear();
+Console.WriteLine("");
+Console.Write("Таблица умножения");
+Console.WriteLine("");
+void PrintingMultiplicationTable()
+{
+    int result;
+    int length = 9;
+    for (int i = 2; i <= length; i++)
+    {
+        for (int j = 1; j <= length; j++)
+        {
+            Console.WriteLine("");
+            Console.Write($" {i} * {j} = {result = i * j}");
+        }
+        Console.WriteLine("");
+    }
+}
+PrintingMultiplicationTable();
