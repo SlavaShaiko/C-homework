@@ -10,7 +10,6 @@ Console.Write("Введите количество строк: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов: ");
 int n = Convert.ToInt32(Console.ReadLine());
-
 int[,] TwoDimensionalArray(int line, int column)
 {
     int[,] array = new int[line, column];
@@ -19,15 +18,13 @@ int[,] TwoDimensionalArray(int line, int column)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = rnd.Next(0, 10);
-
+            array[i, j] = rnd.Next(1, 10);
         }
     }
     return array;
 }
 void PrintArray(int[,] twoArray)
 {
-
     for (int i = 0; i < twoArray.GetLength(0); i++)
     {
         for (int j = 0; j < twoArray.GetLength(1); j++)
@@ -38,23 +35,25 @@ void PrintArray(int[,] twoArray)
         Console.WriteLine();
     }
 }
-
-int ArithmeticMeanNumber(int[,] array)
+void ArithmeticMeanNumber(int[,] array)
 {
-    int result = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
+    Console.WriteLine("---------------------------------------");
+    Console.Write("Среднее арифметическое число каждого столбца: ");
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        double sumResult = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            result += array[i, j];
+            sumResult += array[i, j];
         }
-        Console.WriteLine();
+        sumResult /= array.GetLength(0);
+        Console.Write($"{Math.Round(sumResult, 1)}; ");
     }
-    return result;
+    Console.WriteLine();
 }
-
 int[,] twoDimensionalArray = TwoDimensionalArray(m, n);
-Console.WriteLine("Двухмерный массив с рандомными числами");
+Console.WriteLine("Двухмерный массив с рандомными числами:");
+Console.WriteLine("---------------------------------------");
 PrintArray(twoDimensionalArray);
-int q = ArithmeticMeanNumber(twoDimensionalArray);
-Console.Write(q);
+ArithmeticMeanNumber(twoDimensionalArray);
+Console.WriteLine();
