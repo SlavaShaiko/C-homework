@@ -172,6 +172,8 @@ int GetSumOpt(int[,] arr)
     return sum;
 }
 
+
+
 void PrintMatrix(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)

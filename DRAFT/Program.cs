@@ -707,17 +707,282 @@ namespace ConsoleApplication52
 // PrintingMultiplicationTable();
 
 //))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-Console.Clear();
-Random r = new Random();
-Console.CursorVisible = false;
-while (true)
-{
-    Console.SetCursorPosition(
-        left: r.Next(Console.WindowWidth),
-        top: r.Next(Console.WindowHeight)
-        );
-    Console.Write(r.Next(2));
-    Thread.Sleep(1);
-}
+// Console.Clear();
+// Random r = new Random();
+// Console.CursorVisible = false;
+// while (true)
+// {
+//     Console.SetCursorPosition(
+//         left: r.Next(Console.WindowWidth),
+//         top: r.Next(Console.WindowHeight)
+//         );
+//     Console.Write(r.Next(2));
+//     Thread.Sleep(1);
+// }
 
 //))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+//МАТРИЦА
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Text;
+// using System.Threading;
+
+// namespace The_Matrix
+// {
+//     class Program
+//     {
+//         static Random rnd = new Random();
+//         static object locker = new object();
+
+//         static int Whith; //Ширина консоли
+//         static int Height; //Высота консоли
+
+//         static void Matrix(object argument)
+//         {
+//             Thread.Sleep(rnd.Next(20, 100)); //Случайная задержка перед стартом потока
+//             int r = rnd.Next(10, Height - 7);  //Начальная длина столбца
+//             int stolb = (int)argument;       //Текущий столбец для данного потока
+//             int sleep = rnd.Next(6, 10);     //Скорость печати столбца в текущем потоке
+//             while (true)
+//             {
+//                 Thread.Sleep(rnd.Next(60, 150)); //Делаем задержку, для прорисовки потоков в разнобой ..
+//                 lock (locker)
+//                 {
+//                     if (r < Height)
+//                     {
+//                         for (int i = 0; i < r; i++)
+//                         {
+//                             Console.ForegroundColor = ConsoleColor.DarkGreen;
+//                             Console.SetCursorPosition(stolb, i);
+//                             if (r - i == 1)
+//                             {
+//                                 Console.ForegroundColor = ConsoleColor.White;
+//                                 Console.Write("{0}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 12, i);
+//                                 Console.Write("{0}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 27, i);
+//                                 Console.Write("{0}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 39, i);
+//                                 Console.Write("{0}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+//                                 Thread.Sleep(sleep);
+//                             }
+//                             else if (r - i > 1 && r - i < 4)
+//                             {
+//                                 Console.ForegroundColor = ConsoleColor.Green;
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 12, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 27, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 39, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+//                                 Thread.Sleep(sleep);
+//                             }
+//                             else if (r - i == 3)
+//                             {
+//                                 Console.ForegroundColor = ConsoleColor.White;
+//                                 Console.SetCursorPosition(stolb + 12, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 27, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 39, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+//                                 Thread.Sleep(sleep);
+//                             }
+//                             else
+//                             {
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 12, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 27, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Console.SetCursorPosition(stolb + 39, i);
+//                                 Console.Write("{0}{1}", rnd.Next(0, 2), rnd.Next(0, 2));
+//                                 Thread.Sleep(sleep * 3);
+//                             }
+
+
+//                         }
+//                         r += rnd.Next(1, 20);
+//                         if (r >= Height) r = Height;
+//                     }
+//                     else
+//                     {
+//                         for (int i = 0; i < r; i++)
+//                         {
+//                             Console.SetCursorPosition(stolb, i);
+//                             Console.Write(" ");
+//                             Console.SetCursorPosition(stolb + 7, i);
+//                             Console.Write("{0}", rnd.Next(0, 2));
+//                             Console.SetCursorPosition(stolb + 27, i);
+//                             Console.Write(" ");
+//                             Console.SetCursorPosition(stolb + 39, i);
+//                             Console.Write(" ");
+//                         }
+//                         r = rnd.Next(8, 25);
+//                     }
+//                 }
+//             }
+//         }
+
+//         static void MatrixEnd()
+//         {
+
+//         }
+
+//         static void Main(string[] args)
+//         {
+//             Console.Title = "Matrix";
+//             Console.SetWindowSize(85, 45);
+//             Whith = Console.WindowWidth;
+//             Height = Console.WindowHeight;
+//             for (int i = 0; i < Console.WindowWidth - 39; i++)
+//             {
+//                 ParameterizedThreadStart matrix = new ParameterizedThreadStart(Matrix);
+//                 //ThreadStart matrix = new ThreadStart(Matrix);
+//                 Thread thread = new Thread(matrix);
+//                 thread.Start(i);
+//             }
+//         }
+//     }
+// }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// using System;
+// using System.Linq;                             //МАТРИЦА
+// using System.Text;
+// using System.Threading;
+
+// namespace ConsoleMatrixEffect
+// {
+
+//     // для того, чтобы растянуть консоль на весь экран, нажмите Alt+Enter
+//     static class Program
+//     {
+
+//         private const int delay = 40;
+
+//         static void Main(string[] args)
+//         {
+//             SetConsoleParams();
+
+//             // задаю Матрицу в размер консольного окна
+//             var consoleMatrix = new ConsoleMatrix(Console.WindowWidth, Console.WindowHeight);
+
+//             var cycle = 1; // счетчик цикла. Нужен для регулирования скорости различных столбцов
+//             do
+//             {
+//                 consoleMatrix.ShowMatrix();
+//                 Thread.Sleep(delay);
+//                 consoleMatrix.ShiftMatrixElements(cycle);
+//                 cycle = ((cycle + 1) % 1000); // ограничиваю переменную, чтобы не случилось переполнение int
+//             } while (!Console.KeyAvailable);
+//         }
+
+//         private static void SetConsoleParams()
+//         {
+//             Console.OutputEncoding = Encoding.UTF8;
+//             Console.ForegroundColor = ConsoleColor.Green;
+//             Console.CursorVisible = false;
+//         }
+//     }
+
+//     public class ConsoleMatrix
+//     {
+//         // символы которые будут использоваться для матрицы
+//         //private static readonly char[] _symbols = "¢£¥§gYhjHwWÞßĦŠŊŁþøðÖ ".ToCharArray(); //если консольный шрифт поддерживает Unicode
+//         private static readonly char[] _symbols = "&%#$@*(@YyuUjJhHFfsqVNnv ".ToCharArray();
+//         private readonly int _symbolsLen = _symbols.Length;
+
+//         // матрица
+//         private char[][] _matrix;
+//         private readonly int _width;
+//         private readonly int _height;
+
+//         private readonly Random _rand = new Random(); // задаю глобальный рандомизатор для символов.
+//         private const int period = 6; // для вычисления скорости столбцов
+
+//         /// <summary>
+//         /// 
+//         /// </summary>
+//         /// <param name="width">Ширина окна консоли</param>
+//         /// <param name="height">Высота окна консоли</param>
+//         public ConsoleMatrix(int width, int height)
+//         {
+//             _width = width;
+//             _height = height;
+//             CreateMatrix();
+//         }
+
+//         /// <summary>
+//         /// Заполняю первоначальную матрицу
+//         /// </summary>
+//         private void CreateMatrix()
+//         {
+//             // матрица - массив с массивами символов
+//             _matrix = new char[_height][];
+
+//             for (var h = 0; h < _height; h++)
+//             {
+//                 // заполняю строки символами. Каждый второй символ - пробел, формирования пустых столбцов
+//                 _matrix[h] =
+//                     // Создание последовательности 1..N. Можно использовать вместо стандартных циклов
+//                     Enumerable.Range(0, _width)
+//                         .Select(position => (position + 1) % 2 == 0
+//                                 ? ' ' // пробел нужен для формирования пустых столбцов
+//                                 : _symbols[_rand.Next(0, _symbolsLen)])
+//                         .ToArray();
+//             }
+//         }
+
+//         /// <summary>
+//         /// Печатаю матрицу в консоли
+//         /// </summary>
+//         public void ShowMatrix()
+//         {
+//             // сбрасываю позицию курсока в начальную позицию
+//             Console.SetCursorPosition(0, 0);
+
+//             // вывожу символы построчно
+//             for (var h = 0; h < _height; h++)
+//             {
+//                 var s = new string(_matrix[h]); // делаю из массива символов одну строку, т.к. печать одной строки намного быстрее, чем печать символов по одному
+//                 if (h < _height - 1) Console.WriteLine(s);
+//                 else Console.Write(s); // последнюю строку печатаю без переноса, чтобы не образовалась пустая строка внизу
+//             }
+//         }
+
+//         /// <summary>
+//         /// Метод для сдвига символов в столбцах
+//         /// </summary>
+//         /// <param name="cycle"></param>
+//         public void ShiftMatrixElements(int cycle)
+//         {
+//             for (var w = 0; w < _width; w += 2) // каждый второй столбец пустой
+//             {
+//                 if (w % period > cycle % period) continue; // регулирую скорость для разных столбцов
+
+//                 // сдвигаю все символы в столбце вниз на один символ
+//                 for (var h = _height - 1; h >= 0; h--)
+//                 {
+//                     // для первой строки добавляю случайный символ
+//                     if (h == 0)
+//                     {
+//                         _matrix[h][w] = _symbols[_rand.Next(0, _symbolsLen)];
+//                         continue;
+//                     }
+//                     // перемещаю вышестоящий символ в текущую строку
+//                     _matrix[h][w] = _matrix[h - 1][w];
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
