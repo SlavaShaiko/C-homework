@@ -684,24 +684,40 @@ namespace ConsoleApplication52
 // Console.WriteLine("Min: " + min);
 
 // Console.ReadLine();
-                                          //Таблица умножния
+//Таблица умножния
 
+// Console.Clear();
+// Console.WriteLine("");
+// Console.Write("Таблица умножения");
+// Console.WriteLine("");
+// void PrintingMultiplicationTable()
+// {
+//     int result;
+//     int length = 9;
+//     for (int i = 2; i <= length; i++)
+//     {
+//         for (int j = 1; j <= length; j++)
+//         {
+//             Console.WriteLine("");
+//             Console.Write($" {i} * {j} = {result = i * j}");
+//         }
+//         Console.WriteLine("");
+//     }
+// }
+// PrintingMultiplicationTable();
+
+//))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 Console.Clear();
-Console.WriteLine("");
-Console.Write("Таблица умножения");
-Console.WriteLine("");
-void PrintingMultiplicationTable()
+Random r = new Random();
+Console.CursorVisible = false;
+while (true)
 {
-    int result;
-    int length = 9;
-    for (int i = 2; i <= length; i++)
-    {
-        for (int j = 1; j <= length; j++)
-        {
-            Console.WriteLine("");
-            Console.Write($" {i} * {j} = {result = i * j}");
-        }
-        Console.WriteLine("");
-    }
+    Console.SetCursorPosition(
+        left: r.Next(Console.WindowWidth),
+        top: r.Next(Console.WindowHeight)
+        );
+    Console.Write(r.Next(2));
+    Thread.Sleep(1);
 }
-PrintingMultiplicationTable();
+
+//))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
