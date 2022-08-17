@@ -8,35 +8,35 @@
 // 1 2 4 7
 // 2 3 5 9
 // 2 4 4 8
-
-
 Console.Clear();
 Console.Write("Введите длину строки массива: ");
 int line = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите длину столбца массива: ");
 int column = Convert.ToInt32(Console.ReadLine());
-Console.Write("Укажите диапозон чисел для массива от ");
+Console.WriteLine($"Введите диапозон чисел в массиве:  ");
+Console.Write("от ");
 int from = Convert.ToInt32(Console.ReadLine());
 Console.Write("до ");
 int before = Convert.ToInt32(Console.ReadLine());
 
-
-
-
-int[,] NewRndArray(int m, int n)
+int[,] NewRndArray(int line, int column, int from, int before)
 {
-    int[,] matrix = new int[m, n];
+    int[,] array = new int[line, column];
     Random rnd = new Random();
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(1, 15);
+            array[i, j] = rnd.Next(from, before);
         }
     }
-    return matrix;
+    return array;
 }
-void PrintMatrix(int[,] array)
+int[,] newRndArray = NewRndArray(line, column, from, before);
+Console.WriteLine("Новый двумерный массив: ");
+PrintArray(newRndArray);
+
+void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -49,105 +49,25 @@ void PrintMatrix(int[,] array)
         Console.WriteLine();
     }
 }
+
 void SortArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1) - 1; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            int temp = array[0, 0];
-            if (temp < array[i, j])
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
             {
-                //int temp = array[i, j + 1];
-                array[i, j] = array[j, i];
-                //array[i, j] = temp;
+                if (array[i, k] < array[i, k + 1])
+                {
+                    int temp = 0;
+                    temp = array[i, k];
+                    array[i, k] = array[i, k + 1];
+                    array[i, k + 1] = temp;
+                }
             }
         }
     }
 }
-int[,] newRndArray = NewRndArray(line, column);
-PrintMatrix(newRndArray);
-Console.WriteLine();
 SortArray(newRndArray);
-PrintMatrix(newRndArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Console.Clear();
-// Console.WriteLine($"Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.");
-// Console.WriteLine($"\nВведите размер массива m x n и диапазон случайных значений:");
-// int m = InputNumbers("Введите m: ");
-// int n = InputNumbers("Введите n: ");
-// int range = InputNumbers("Введите диапазон: от 1 до ");
-
-// int[,] array = new int[m, n];
-// CreateArray(array);
-// WriteArray(array);
-
-// Console.WriteLine($"\nОтсортированный массив: ");
-// OrderArrayLines(array);
-// WriteArray(array);
-
-// void OrderArrayLines(int[,] array)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             for (int j = 0; j < array.GetLength(1) - 1; j++)
-//             {
-//                 if (array[i, j] < array[i, j + 1])
-//                 {
-//                     int temp = array[i, j + 1];
-//                     array[i, j + 1] = array[i, j];
-//                     array[i, j] = temp;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// int InputNumbers(string input)
-// {
-//     Console.Write(input);
-//     int output = Convert.ToInt32(Console.ReadLine());
-//     return output;
-// }
-
-// void CreateArray(int[,] array)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             array[i, j] = new Random().Next(range);
-//         }
-//     }
-// }
-
-// void WriteArray(int[,] array)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             Console.Write(array[i, j] + " ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
-
-
-
-
-
+Console.WriteLine("Отсортированный массив: ");
