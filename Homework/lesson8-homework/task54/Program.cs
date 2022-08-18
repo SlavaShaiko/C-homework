@@ -19,6 +19,7 @@ int from = Convert.ToInt32(Console.ReadLine());
 Console.Write("до ");
 int before = Convert.ToInt32(Console.ReadLine());
 
+int[,] newRndArray = NewRndArray(line, column, from, before);
 int[,] NewRndArray(int line, int column, int from, int before)
 {
     int[,] array = new int[line, column];
@@ -32,10 +33,9 @@ int[,] NewRndArray(int line, int column, int from, int before)
     }
     return array;
 }
-int[,] newRndArray = NewRndArray(line, column, from, before);
+
 Console.WriteLine("Новый двумерный массив: ");
 PrintArray(newRndArray);
-
 void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -50,7 +50,8 @@ void PrintArray(int[,] array)
     }
 }
 
-void SortArray(int[,] array)
+int[,] sortArray=SortArray(newRndArray);
+int[,] SortArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -58,7 +59,7 @@ void SortArray(int[,] array)
         {
             for (int k = 0; k < array.GetLength(1) - 1; k++)
             {
-                if (array[i, k] < array[i, k + 1])
+                if (array[i, k] > array[i, k + 1])
                 {
                     int temp = 0;
                     temp = array[i, k];
@@ -68,6 +69,8 @@ void SortArray(int[,] array)
             }
         }
     }
+    return array;
 }
-SortArray(newRndArray);
+
 Console.WriteLine("Отсортированный массив: ");
+PrintArray(sortArray);
