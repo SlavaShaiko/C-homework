@@ -9,7 +9,7 @@
 // и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
 Console.Clear();
-int[,] newRndArray = NewRndArray(3, 3, 1, 6);
+int[,] newRndArray = NewRndArray(6, 6, -50, 50);
 int[,] NewRndArray(int line, int column, int from, int before)
 {
     int[,] array = new int[line, column];
@@ -40,8 +40,8 @@ void PrintArray(int[,] array)
     }
 }
 
-int[] maximumRowValue = MaximumRowValue(newRndArray);
-int[] MaximumRowValue(int[,] array)
+int[] sumRowValue = SumRowValue(newRndArray);
+int[] SumRowValue(int[,] array)
 {
     int[] arr = new int[array.GetLength(0)];
     for (int i = 0; i < array.GetLength(0); i++)
@@ -55,7 +55,9 @@ int[] MaximumRowValue(int[,] array)
     }
     return arr;
 }
-PrintNewArray(maximumRowValue);
+
+Console.Write("Сумма элементов в каждой строке: ");
+PrintNewArray(sumRowValue);
 void PrintNewArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -66,25 +68,21 @@ void PrintNewArray(int[] array)
     }
 }
 
-
 Console.WriteLine();
-MaximumRowElement(maximumRowValue);
-void MaximumRowElement(int[] array)
+MinRowElement(sumRowValue);
+Console.WriteLine();
+void MinRowElement(int[] array)
 {
-    int imax = 0;
-    int max = array[0];
-    for (int i = 0; i < array.Length; i++) //ищем максимальный элемент
+    int imin = 0;
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > max)
+        if (array[i] <= min)
         {
-            max = array[i];
-            Console.WriteLine(max);
-            Console.Write("Summa Maximum = {0,2}", max + "    Row number: ");
+            min = array[i];
+            imin = i;
         }
-        Console.WriteLine();
     }
+    Console.WriteLine($"Номер индекса строки с наименьшей суммой элементов: " +
+                                    $"newRndArray[{imin},j], сумма элементов в строке= {min}.");
 }
-
-
-
-
