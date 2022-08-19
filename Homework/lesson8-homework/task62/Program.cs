@@ -22,8 +22,8 @@ int[,] NewTwoDimensionalArray(int line, int column)
     return array;
 }
 
-Console.WriteLine("Заполняем массив числами от 1 до 16: ");
-PrintArray(newArray);
+//Console.WriteLine("Заполняем массив числами от 1 до 16: ");
+//PrintArray(newArray);
 void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -44,30 +44,54 @@ void PrintArray(int[,] array)
 int[,] spiralArray = SpiralArray(newArray);
 int[,] SpiralArray(int[,] spiral)
 {
-
-    int temp = spiral.GetLength(1) - 1;
-    for (int i = 0; i < spiral.GetLength(0); i++)
+    int t = spiral.GetLength(0) - 1;
+    int temp = spiral.GetLength(0);
+    int f = 0;
+    for (int i = 0; i < temp; i++)
     {
-        int firstLine = i;
-        firstLine++;
-        temp++;
+        
 
-        for (int j = 0; j < spiral.GetLength(1); j++)
-        {
-            if (spiral[i, j] > 0)
-            {
-                spiral[0, i] = firstLine;
-
-            }
-            spiral[i, j] = temp;
+            spiral[0, i] = i + 1;
+            spiral[j, 0] = f;
+           
         }
-        // for (int n = 0; n < spiral.GetLength(0); n++)
-        // {
-
-        // }
 
     }
+
+
+
+
     return spiral;
 }
 Console.WriteLine();
 PrintArray(spiralArray);
+
+
+// int[,] spiralArray = SpiralArray(newArray);
+// int[,] SpiralArray(int[,] spiral)
+// {
+//     int t = spiral.GetLength(0) - 1;
+//     int temp = spiral.GetLength(0);
+//     int f = 0;
+//     for (int i = 0; i < temp; i++)
+//     {
+//         f = 12;
+//         t++;
+//         for (int j = 1; j < temp; j++)
+//         {
+
+//             spiral[0, i] = i + 1;
+//             spiral[j, 0] = f;
+//             f--;
+//             for (int n = 0; n < temp; n++)
+//             {
+//                 spiral[i, j] = t;
+
+//                 for (int l = 1; l < temp; l++)
+//                 {
+//                     spiral[0, l] = l;
+//                 }
+//             }
+//         }
+
+//     }
