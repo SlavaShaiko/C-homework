@@ -17,7 +17,7 @@
 // 10 6 24 49
 
 Console.Clear();
-int[,] firstMatrix = FirstMatrix(4, 4, 1, 10);
+int[,] firstMatrix = FirstMatrix(3, 3, 1, 10);
 int[,] FirstMatrix(int line, int column, int from, int before)
 {
     int[,] array = new int[line, column];
@@ -32,7 +32,7 @@ int[,] FirstMatrix(int line, int column, int from, int before)
     return array;
 }
 
-int[,] secondMatrix = SecondMatrix(4, 4, 1, 10);
+int[,] secondMatrix = SecondMatrix(3, 3, 1, 10);
 int[,] SecondMatrix(int line, int column, int from, int before)
 {
     int[,] array = new int[line, column];

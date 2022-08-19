@@ -5,7 +5,7 @@
 // 11 16 15 6
 // 10 9 8 7
 
-Console.Clear();
+//Console.Clear();
 int[,] newArray = NewTwoDimensionalArray(4, 4);
 int[,] NewTwoDimensionalArray(int line, int column)
 {
@@ -40,68 +40,34 @@ void PrintArray(int[,] array)
 
 
 
+
 int[,] spiralArray = SpiralArray(newArray);
 int[,] SpiralArray(int[,] spiral)
 {
-    int n = spiral.GetLength(1);
-    int m = spiral.GetLength(0);
-    int row = 0;
-    int col = 0;
-    int dx = 1;
-    int dy = 0;
-    int dirChanges = 0;
-    int visits = m;
 
-    for (int i = 0; i < n * m; i++)
+    int temp = spiral.GetLength(1) - 1;
+    for (int i = 0; i < spiral.GetLength(0); i++)
     {
-        Console.Write(spiral[row, col] + " ");
-        visits--;
-        if (visits == 0)
-        {
-            visits = m * (dirChanges % 2) + n * ((dirChanges + 1) % 2) - (dirChanges / 2 - 1);
-            int temp = dx;
-            dx = -dy;
-            dy = temp;
-            dirChanges++;
-        }
+        int firstLine = i;
+        firstLine++;
+        temp++;
 
-        col += dx;
-        row += dy;
+        for (int j = 0; j < spiral.GetLength(1); j++)
+        {
+            if (spiral[i, j] > 0)
+            {
+                spiral[0, i] = firstLine;
+
+            }
+            spiral[i, j] = temp;
+        }
+        // for (int n = 0; n < spiral.GetLength(0); n++)
+        // {
+
+        // }
+
     }
     return spiral;
 }
 Console.WriteLine();
 PrintArray(spiralArray);
-
-
-
-
-
-
-// int[,] tempMin = new int[spiral.GetLength(0), spiral.GetLength(1)];
-// int length;//= spiral.GetLength(0) * spiral.GetLength(1);
-// for (int i = 0; i < spiral.GetLength(0); i++)
-// {
-//     length = spiral.GetLength(0) * spiral.GetLength(1);
-//     for (int j = 0; j < spiral.GetLength(1); j++)
-//     {
-//         for (int k = 0; k < length; k++)
-//         {
-
-
-//             if (spiral[i, j] < length)
-//             {
-//                 length = spiral[i, j];
-//                 tempMin[i, j] = length;
-//             }
-//             else
-//             {
-//                 tempMin[i, j] = length;
-//                 length = spiral[i, j];
-//             }
-//         }
-//         Console.Write(length + " ");
-//     }
-
-
-// }
