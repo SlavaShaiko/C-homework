@@ -41,30 +41,30 @@ void PrintArray(int[,] array)
 
 
 
-int[,] spiralArray = SpiralArray(newArray);
-int[,] SpiralArray(int[,] spiral)
-{
-    int t = spiral.GetLength(0) - 1;
-    int temp = spiral.GetLength(0);
-    int f = 0;
-    for (int i = 0; i < temp; i++)
-    {
+// int[,] spiralArray = SpiralArray(newArray);
+// int[,] SpiralArray(int[,] spiral)
+// {
+//     int t = spiral.GetLength(0) - 1;
+//     int temp = spiral.GetLength(0);
+//     int f = 0;
+//     for (int i = 0; i < temp; i++)
+//     {
         
 
-            spiral[0, i] = i + 1;
-            spiral[j, 0] = f;
+//             spiral[0, i] = i + 1;
+//             spiral[j, 0] = f;
            
-        }
+//         }
 
-    }
-
-
+//     }
 
 
-    return spiral;
-}
-Console.WriteLine();
-PrintArray(spiralArray);
+
+
+//     return spiral;
+// }
+// Console.WriteLine();
+// PrintArray(spiralArray);
 
 
 // int[,] spiralArray = SpiralArray(newArray);
