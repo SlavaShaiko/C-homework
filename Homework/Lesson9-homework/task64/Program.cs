@@ -25,6 +25,20 @@ void NaturalNumbers(int n, int k)
 }
 
 
+// Console.Clear();
+// Console.Write("Введите число N:");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// void NaturalNumber(int num)
+// {
+//     if (num == 0) return;
+//     Console.Write($"{num}  ");
+//     NaturalNumber(num - 1);
+// }
+// NaturalNumber(number);
+
+
+
 
 
 
