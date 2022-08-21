@@ -4,42 +4,21 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-
 Console.Clear();
 Console.Write("Введите значение N: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int temp = number;
 Console.Write($"Все натуральные числа от N = {number} до 1 -> ");
-
-NaturalNumbers(number, temp);
-void NaturalNumbers(int n, int k)
+int quotationMarks = 0;
+NaturalNumbers(number, quotationMarks);
+void NaturalNumbers(int n, int quotationMarks)
 {
     if (n == 0) return;
     else
     {
-        if (n == k) Console.Write($"{n}, ");
-        if (n < k) Console.Write($"{n}, ");
-        NaturalNumbers(n - 1, k);
+        if (quotationMarks == 0) Console.Write($"''{n}, ");
+        else if (n > 1) Console.Write($"{n}, ");
+        if (n == 1) Console.Write($"{n}'' ");
+        NaturalNumbers(n - 1, quotationMarks + 1);
         return;
     }
 }
-
-
-// Console.Clear();
-// Console.Write("Введите число N:");
-// int number = Convert.ToInt32(Console.ReadLine());
-
-// void NaturalNumber(int num)
-// {
-//     if (num == 0) return;
-//     Console.Write($"{num}  ");
-//     NaturalNumber(num - 1);
-// }
-// NaturalNumber(number);
-
-
-
-
-
-
-
