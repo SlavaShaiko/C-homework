@@ -10,7 +10,8 @@ int n = Convert.ToInt32(Console.ReadLine());
 int result = 0;
 
 int sum = SumNaturalElements(m, n, result);
-Console.Write($"Сумма натуральных элементов от M = {m} до N = {n} -> {sum} ");
+Console.Write($"Сумма натуральных элементов в промежутке от M = {m} до N = {n} -> {sum} ");
+Console.WriteLine();
 
 int SumNaturalElements(int m, int n, int res)
 {
@@ -21,15 +22,3 @@ int SumNaturalElements(int m, int n, int res)
         return SumNaturalElements(m + 1, n, res);
     }
 }
-
-
-
-// if (n == 0)
-// {
-//     return res;
-// }
-// else
-// {
-//     res = m;
-//     return SumNaturalElements(m = m + n, n - 1, res);
-// }
