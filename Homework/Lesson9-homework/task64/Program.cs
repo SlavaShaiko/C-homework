@@ -1,4 +1,4 @@
-﻿// Задача 64: Задача 64: Задайте значение N.
+﻿// Задача 64: Задайте значение N.
 // Напишите программу, которая выведет все натуральные числа 
 // в промежутке от N до 1. Выполнить с помощью рекурсии.
 // N = 5 -> "5, 4, 3, 2, 1"
@@ -7,9 +7,10 @@
 Console.Clear();
 Console.Write("Введите значение N: ");
 int number = Convert.ToInt32(Console.ReadLine());
-Console.Write($"Все натуральные числа от N = {number} до 1 -> ");
+Console.Write($"Все натуральные числа в промежутке от N = {number} до 1 -> ");
 int quotationMarks = 0;
 NaturalNumbers(number, quotationMarks);
+Console.WriteLine();
 void NaturalNumbers(int n, int quotationMarks)
 {
     if (n == 0) return;
